@@ -1,5 +1,8 @@
+
+<p>Competência</p> @ViewData["titulo"]
+
 @{
-    ViewData["Title"] = "Home Page";
+    var competencia = ViewData["tablebloom"] as Competencia; //Declarado como tipo Competencia, ViewData precisa enfatizar o tipo
 }
 
 @* TITULOS *@
@@ -30,7 +33,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      linha 1 - coluna 1
+      @competencia?.LinhaBloom
     </div>
     <div class="col">
       linha 1 - coluna 2
@@ -54,7 +57,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      linha 2 - coluna 1
+      @competencia?.LinhaBloom
     </div>
     <div class="col">
       linha 2 - coluna 2

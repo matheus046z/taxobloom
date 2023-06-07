@@ -1,4 +1,4 @@
-// namespace webappbloom.Models;
+namespace WebAppBloom.Models;
 public class Competencia // Camada Model
 {
     public int Id  { get; set; }
