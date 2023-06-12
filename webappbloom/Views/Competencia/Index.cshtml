@@ -6,31 +6,32 @@
 }
 
 @* TITULOS *@
+
 <div class="container">
   <div class="row">
     @{
-      List<string> titulos = "MEMORIZAR", "COMPREENDER", "APLICAR"
+  List<string> titulos = new List <string>()
+    { 
+      "MEMORIZAR",
+      "COMPREENDER",
+      "APLICAR",
+      "ANALIZAR",
+      "AVALIAR",
+      "CRIAR"
+    };
+
+    foreach (string titulo in titulos)
+    {
+      <div class="col">
+        @titulo
+      </div>
     }
-    @* <div class="col">
-      MEMORIZAR
-    </div>
-    <div class="col">
-      COMPREENDER
-    </div>
-    <div class="col">
-      APLICAR
-    </div>
-    <div class="col">
-      ANALISAR
-    </div>
-    <div class="col">
-      AVALIAR
-    </div>
-    <div class="col">
-      CRIAR
-    </div> *@
+}
   </div>
 </div>
+
+
+
 
 @* linha 1 *@
 <div class="container">
