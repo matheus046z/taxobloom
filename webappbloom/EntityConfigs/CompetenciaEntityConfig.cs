@@ -24,12 +24,12 @@ public class CompetenciaEntityConfig : IEntityTypeConfiguration<Competencia>
         /*Coluna bloom*/
         builder.Property(c => c.ColunaBloom)
                 .HasColumnName("ColunaBloom")
-                .HasColumnType("varcar(60)")
+                .HasColumnType("varchar(60)")
                 .IsRequired();
         
         builder.Property(c=> c.LinhaBloom)
                 .HasColumnName("LinhaBloom")
-                .HasColumnType("varcar(60)")
+                .HasColumnType("varchar(60)")
                 .IsRequired();
     }
 }
