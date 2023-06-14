@@ -16,7 +16,7 @@ public class CompetenciaController : Controller{
     {
         _context = context;
     }
-    public ActionResult Index(){ // O nome do arquivo deve ser igual ao da Action, Index() nesse caso retorna a View do Index.cshtml em Competencia
+    public IActionResult Index(){ // O nome do arquivo deve ser igual ao da Action, Index() nesse caso retorna a View do Index.cshtml em Competencia
     
         Competencia competencia = new Competencia();
         competencia.ColunaBloom = "MEMORIZAR";
@@ -27,7 +27,7 @@ public class CompetenciaController : Controller{
 
         return View();
     }
-    public ActionResult RelatorioComp(){
+    public IActionResult RelatorioComp(){
        
         var competencias = _context.Competencias.ToList();
         return View();
@@ -41,6 +41,14 @@ public class CompetenciaController : Controller{
         //     TituloPagina = "Página de Teste",
         // };
         //return View(viewModel);    
+    }
+    public IActionResult Listar(){
+        var listaCompe = _context.Competencias.ToList();
+        var listaViewModel = new ListaCompetenciaViewModel{
+            Competencias = listaCompe
+        };
+
+        return View(listaViewModel);
     }
 }
 

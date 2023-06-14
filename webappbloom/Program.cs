@@ -3,7 +3,7 @@ using WebAppBloom.Contexts;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+// builder.Services.AddControllersWithViews();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbConext>(); //Habilita Injeção de Dependência

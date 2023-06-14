@@ -1,0 +1,76 @@
+@model ListaCompetenciaViewModel
+<h1>Listando Competências</h1>
+<table>   
+     <tr>
+        <th>Id</th>
+        <th>Coluna Bloom</th>
+        <th>Linha Bloom</th>   
+     </tr>
+     @{
+       foreach(var item in Model.Competencias)
+       {
+          <tr>
+              <td>@item.Id</td>
+              <td>@item.ColunaBloom</td>
+              <td>@item.LinhaBloom</td>
+          </tr>
+       } 
+     }
+</table>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      @{
+        List<string> titulos = new List <string>()
+        { 
+            "MEMORIZAR",
+            "COMPREENDER",
+            "APLICAR",
+            "ANALIZAR",
+            "AVALIAR",
+            "CRIAR"
+        };
+            foreach (var titulo in titulos){
+                <th scope="col">@titulo</th>
+            }
+      }
+    </tr>
+
+  </thead>
+  <tbody>
+        @{
+            foreach(var item in Model.Competencias){
+                <tr>
+                    @if(@item.ColunaBloom.ToString().ToLower() == "memorizar")
+                    {
+                        <td>@item.LinhaBloom</td>
+                    }
+                    else{<td></td>}
+                    @if(@item.ColunaBloom.ToString().ToLower() == "compreender"){
+                        <td>@item.LinhaBloom</td>
+                    }
+                    else{<td></td>}
+                    @if(@item.ColunaBloom.ToString().ToLower() == "aplicar"){
+                        <td>@item.LinhaBloom</td>
+                    }
+                    else{<td></td>}
+                    @if(@item.ColunaBloom.ToString().ToLower() == "analisar"){
+                        <td>@item.LinhaBloom</td>
+                    }
+                    else{<td></td>}
+                    @if(@item.ColunaBloom.ToString().ToLower() == "avaliar"){
+                        <td>@item.LinhaBloom</td>
+                    }
+                    else{<td></td>}
+                    @if(@item.ColunaBloom.ToString().ToLower() == "criar"){
+                        <td>@item.LinhaBloom</td>
+                    }
+                    else{<td></td>}
+                </tr>
+            }
+        }
+  </tbody>
+</table>
