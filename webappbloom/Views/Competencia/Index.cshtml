@@ -1,222 +1,41 @@
-
+@* 
 <p>Competência</p> @ViewData["titulo"]
 
 @{
     var competencia = ViewData["tablebloom"] as Competencia; //Declarado como tipo Competencia, ViewData precisa enfatizar o tipo
-}
+} *@
 
-@* TITULOS *@
-
+<div class="text-Left">
+    <h1>Taxonomia de Bloom</h1>
+    <p></p>
+<form>
 <div class="container">
-  <div class="row">
-    @{
-  List<string> titulos = new List <string>()
-    { 
-      "MEMORIZAR",
-      "COMPREENDER",
-      "APLICAR",
-      "ANALIZAR",
-      "AVALIAR",
-      "CRIAR"
-    };
-
-    foreach (string titulo in titulos)
-    {
-      <div class="col">
-        @titulo
+  <div class="row row-cols-auto">
+    <div class="col">
+      @* <input type = "text"> *@
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Competência</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
-    }
-}
-  </div>
-</div>
-
-
-
-
-@* linha 1 *@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      @competencia?.LinhaBloom
     </div>
     <div class="col">
-      linha 1 - coluna 2
-    </div>
-    <div class="col">
-      linha 1 - coluna 3
-    </div>
-    <div class="col">
-      linha 1 - coluna 4
-    </div>
-    <div class="col">
-      linha 1 - coluna 5
-    </div>
-    <div class="col">
-      linha 1 - coluna 6
-    </div>
-  </div>
-</div>
-
-@* linha 2 *@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      @competencia?.LinhaBloom
-    </div>
-    <div class="col">
-      linha 2 - coluna 2
-    </div>
-    <div class="col">
-      linha 2 - coluna 3
-    </div>
-    <div class="col">
-      linha 2 - coluna 4
-    </div>
-    <div class="col">
-      linha 2 - coluna 5
-    </div>
-    <div class="col">
-      linha 2 - coluna 6
-    </div>
-  </div>
-</div>
-
-@* linha 3 *@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      linha 3 - coluna 1
-    </div>
-    <div class="col">
-      linha 3 - coluna 2
-    </div>
-    <div class="col">
-      linha 3 - coluna 3
-    </div>
-    <div class="col">
-      linha 3 - coluna 4
-    </div>
-    <div class="col">
-      linha 3 - coluna 5
-    </div>
-    <div class="col">
-      linha 3 - coluna 6
-    </div>
-  </div>
-</div>
-
-@* linha 4 *@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      linha 4 - coluna 1
-    </div>
-    <div class="col">
-      linha 4 - coluna 2
-    </div>
-    <div class="col">
-      linha 4 - coluna 3
-    </div>
-    <div class="col">
-      linha 4 - coluna 4
-    </div>
-    <div class="col">
-      linha 4 - coluna 5
-    </div>
-    <div class="col">
-      linha 4 - coluna 6
-    </div>
-  </div>
-</div>
-
-@* linha 5 *@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      linha 5 - coluna 1
-    </div>
-    <div class="col">
-      linha 5 - coluna 2
-    </div>
-    <div class="col">
-      linha 5 - coluna 3
-    </div>
-    <div class="col">
-      linha 5 - coluna 4
-    </div>
-    <div class="col">
-      linha 5 - coluna 5
-    </div>
-    <div class="col">
-      linha 5 - coluna 6
-    </div>
-  </div>
-</div>
-
-@* linha 6 *@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      linha 6 - coluna 1
-    </div>
-    <div class="col">
-      linha 6 - coluna 2
-    </div>
-    <div class="col">
-      linha 6 - coluna 3
-    </div>
-    <div class="col">
-      linha 6 - coluna 4
-    </div>
-    <div class="col">
-      linha 6 - coluna 5
-    </div>
-    <div class="col">
-      linha 6 - coluna 6
-    </div>
-  </div>
-</div>
-
-@* linha 7 *@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      linha 7 - coluna 1
-    </div>
-    <div class="col">
-      linha 7 - coluna 2
-    </div>
-    <div class="col">
-      linha 7 - coluna 3
-    </div>
-    <div class="col">
-      linha 7 - coluna 4
-    </div>
-    <div class="col">
-      linha 7 - coluna 5
-    </div>
-    <div class="col">
-      linha 7 - coluna 6
-    </div>
-  </div>
-</div>
-
-<div class="text-center">
-    <h1 class="display-4">Taxonomia de Bloom</h1>
-        <form>
-            Digite o verbo <input type = "text">
-            <div class="dropdown">
+      <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Selecione o Verbo
-                </button>
+                  </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="#">Memorizar</a></li>
                     <li><a class="dropdown-item" href="#">Compreender</a></li>
                     <li><a class="dropdown-item" href="#">Aplicar</a></li>
+                    <li><a class="dropdown-item" href="#">Analisar</a></li>
                     <li><a class="dropdown-item" href="#">Avaliar</a></li>
                     <li><a class="dropdown-item" href="#">Criar</a></li>
-                </ul>
-            </div>
-            <button>Cadastrar</button>
-        </form>  
+                  </ul>
+      </div>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary">Cadastrar</button>
+    </div>
+  </div>
 </div>
+</form>
